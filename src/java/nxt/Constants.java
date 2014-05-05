@@ -8,7 +8,7 @@ public final class Constants {
     public static final int BLOCK_HEADER_LENGTH = 224;
     public static final int MAX_NUMBER_OF_TRANSACTIONS = 255;
     public static final int MAX_PAYLOAD_LENGTH = MAX_NUMBER_OF_TRANSACTIONS * 128;
-    public static final long MAX_BALANCE = 10000000000L;
+    public static final long MAX_BALANCE = 10000000000L;//设置nas总量
     public static final long INITIAL_BASE_TARGET = 153722867;
     public static final long MAX_BASE_TARGET = MAX_BALANCE * INITIAL_BASE_TARGET;
 
