@@ -1,0 +1,10 @@
+/.idea/
+/nxt_db/
+/webapps/
+/classes/
+/*.log
+/html/doc/*
+/keystore
+/nxt.jar
+/nxt_test_db/
+*.trace

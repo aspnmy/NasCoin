@@ -1,0 +1,62 @@
+<html>
+<head>
+<script type="text/javascript">
+
+var messages = new Array();
+var d = new Date("November 24, 2013 12:00:00 UTC");
+var ms = d.getTime();
+    
+function sendRequest(requestParameters, callback) {
+    var request = new XMLHttpRequest();
+    request.open("GET", "/nxt?requestType=" + requestParameters + "&" + Math.random());
+    
+    request.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var response = JSON.parse(this.responseText);
+            callback(response);
+        }
+    };
+    request.send();
+}
+function load() {
+	sendRequest("getState",function(response){
+                    showState({lastBlock: response.lastBlock,numberOfBlocks: response.numberOfBlocks,version: response.version, time: response.time, numberOfAccounts: response.numberOfAccounts, cumulativeDifficulty: response.cumulativeDifficulty});
+	});
+}	
+function showState(message) {
+
+    var html = '';
+    html+= 'lastBlock: ' + message.lastBlock + '<br>';
+    html+= 'numberOfBlocks: ' + message.numberOfBlocks + '<br>';
+    html+= 'version: ' + message.version + '<br>';
+    html += 'time: ' + new Date(ms + message.time*1000)+ '<br>';
+    html+= 'numberOfAccounts: ' + message.numberOfAccounts + '<br>';
+    html+= 'cumulativeDifficulty: ' + message.cumulativeDifficulty + '<br>';
+    html+= '<br>';
+    document.getElementById('messages').innerHTML = html;
+    
+	sendRequest("getBlock&block="+message.lastBlock,function(response){
+                    showLastBlock({nextBlock: response.previousBlock});
+			
+	});
+}
+
+function showBlock(message) {
+    var html = '';
+    html+= 'nextBlock: ' + message.previousBlock + '</b><br />';
+    document.getElementById('messages1').innerHTML = html;
+}
+
+</script>
+
+</head>
+    
+<body onload="load()">
+
+<div id="messages">
+</div>
+<div id="messages1">
+</div>
+    
+</body>
+</html>
