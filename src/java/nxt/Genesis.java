@@ -3,7 +3,7 @@ package nxt;
 import java.math.BigInteger;
 
 public interface Genesis {
-
+//设置创始块
     public static final Long GENESIS_BLOCK_ID = -285163775193647401L;
     public static final Long CREATOR_ID = 1739068987193023818L;
     public static final byte[] CREATOR_PUBLIC_KEY = {
