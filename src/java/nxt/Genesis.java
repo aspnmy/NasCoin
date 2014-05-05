@@ -4,12 +4,12 @@ import java.math.BigInteger;
 
 public interface Genesis {
 //设置创始块
-    public static final Long GENESIS_BLOCK_ID = -285163775193647401L;
-    public static final Long CREATOR_ID = 1739068987193023818L;
+    public static final Long GENESIS_BLOCK_ID = -285163775193647401L;//创始块ID
+    public static final Long CREATOR_ID = 1739068987193023818L;//创始者ID
     public static final byte[] CREATOR_PUBLIC_KEY = {
             18, 89, -20, 33, -45, 26, 48, -119, -115, 124, -47, 96, -97, -128, -39, 102,
             -117, 71, 120, -29, -39, 126, -108, 16, 68, -77, -97, 12, 68, -46, -27, 27
-    };
+    };//创始者公钥
 
     public static final Long[] GENESIS_RECIPIENTS = {
             (new BigInteger("11840861149211111342")).longValue(),
