@@ -10,7 +10,7 @@ public interface Genesis {
             18, 89, -20, 33, -45, 26, 48, -119, -115, 124, -47, 96, -97, -128, -39, 102,
             -117, 71, 120, -29, -39, 126, -108, 16, 68, -77, -97, 12, 68, -46, -27, 27
     };//创始者公钥
-
+//-----IPO 股东初始化地址-------//
     public static final Long[] GENESIS_RECIPIENTS = {
             (new BigInteger("11840861149211111342")).longValue(),
             (new BigInteger("12006148579748690769")).longValue(),
@@ -49,7 +49,7 @@ public interface Genesis {
             (new BigInteger("10154666925216279036")).longValue(),
             (new BigInteger("8765228304511562346")).longValue()  
             };
-
+//-------IPO 股东初始化数量----------//
     public static final Long[] GENESIS_AMOUNTS = {
     	50000000L,
     	700000000L,
